@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+<ul data-bind="foreach:catList">
+<li data-bind="text: name, click: $parent.nextCat"></li>
+    </ul>
+
+
+<div data-bind="with: currentCat()">
+        <h2 data-bind="text: name"></h2>
+        <h4 data-bind="text: level"></h4>
+        <div data-bind="text: clickCount"></div>
+
+        
+<img src="" alt="cute cat" data-bind="click: $parent.incrementCounter,
+attr: {src: imgSrc}">
+<ul data-bind="foreach:nickNames">
+    <li data-bind="text: $data"></li>
+</ul>
+    </div>
+
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <script src="js/lib/app.js"></script>
+</body>
+
+</html>
